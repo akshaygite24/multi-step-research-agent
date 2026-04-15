@@ -25,7 +25,7 @@ def get_agent():
     agent_executor = AgentExecutor(
         agent=agent,
         tools=tools,
-        verbose=False
+        verbose=True
     )
 
     return agent_executor
