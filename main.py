@@ -1,13 +1,15 @@
-from tools.search_tool import get_search_tool
-from tools.summarize_tool import summarize_tool
-
+from agents.agent import get_agent
 if __name__ == "__main__":
-    search_tool = get_search_tool()
+    agent = get_agent()
 
     query = "latest trends in electric vehicles and top EV companies like Tesla BYD Volkswagen"
-    raw_result = search_tool.run(query)
-    print("Raw Results:\n", raw_result)
 
-    summary = summarize_tool.invoke(raw_result)
-    print("\n\nSummarizes Result: \n", summary)
-    
+    result = agent.invoke({"input": query})
+
+    print("\n" + "="*50)
+    print("Final Answer")
+    print("="*50)
+
+    print("\n" + result['output'])
+
+    print("\n" + "="*50)
