@@ -1,15 +1,8 @@
-from agents.agent import get_agent
-if __name__ == "__main__":
-    agent = get_agent()
+from agent_runner import run_agent
 
+if __name__ == "__main__":
     query = "latest trends in electric vehicles and top EV companies like Tesla BYD Volkswagen"
 
-    result = agent.invoke({"input": query})
+    output = run_agent(query)
 
-    print("\n" + "="*50)
-    print("Final Answer")
-    print("="*50)
-
-    print("\n" + result['output'])
-
-    print("\n" + "="*50)
+    print(output)
